@@ -16,4 +16,11 @@ def arm_calc(num):
     return sum_result
 
 
-print(arm_calc(21))
+checked_num = 1000
+armstrong_list = []
+while checked_num > 0:
+    if checked_num == arm_calc(checked_num):
+        armstrong_list.append(checked_num)
+    checked_num -= 1
+
+print(armstrong_list)
