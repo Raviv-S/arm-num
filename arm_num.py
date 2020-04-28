@@ -4,22 +4,18 @@ def arm_calc(inp_num):
     :param num: int
     :return: calculated int
     """
-    num_digit_list = list(map(int, str(inp_num)))
-    num_len = len(num_digit_list)
-    return sum([digit ** num_len for digit in num_digit_list])
+    digits = list(map(int, str(inp_num)))
+    num_len = len(digits)
+    return sum(digit ** num_len for digit in digits)
 
 
 def armstrong_numbers(checked_num):
     """
     Returns all the armstrong numbers between 1 and the input.
-    :param checked_num: Int - the maximum range to check
-    :return: List of all the
+    :param checked_num: Int - the maximum range to check.
+    :return: List of all the armstrong numbers in the range.
     """
-    armstrong_list = []
-    for ins in range(checked_num + 1):
-        if ins == arm_calc(ins):
-            armstrong_list.append(ins)
-    return armstrong_list
+    return list(filter(lambda instance: instance == arm_calc(instance), range(1, checked_num + 1)))
 
 
 def main():
